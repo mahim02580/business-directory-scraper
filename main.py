@@ -105,8 +105,6 @@ while True:
         business_info_list.append(business_info)
 
     page_num += 1
-    if page_num == 10:
-        break
 
 print("Scraping Ended!")
 
