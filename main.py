@@ -29,11 +29,11 @@ while True:
 
     soup = BeautifulSoup(page.text, "html.parser")
 
-    cards_links_elements = soup.select(selector="h2.directorist-listing-title a")
+    cards_link_tags = soup.select(selector="h2.directorist-listing-title a")
 
-    if not cards_links_elements:
+    if not cards_link_tags:
         break  # Ends loop if there is no more business information cards on the page
-    cards_links = [cards_links_element.get("href") for cards_links_element in cards_links_elements]
+    cards_links = [cards_link_tag.get("href") for cards_link_tag in cards_link_tags]
 
     for card_link in cards_links:
         business_details_page = requests.get(card_link, headers=headers)
